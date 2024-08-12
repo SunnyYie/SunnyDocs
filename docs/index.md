@@ -12,20 +12,20 @@ hero:
       link: /guide
     - theme: alt
       text: 快速开始
-      link: /interview
+      link: /React
     - theme: alt
       text: GitHub
       link: https://github.com/SunnyYie/SunnyDocs
 
 features:
   - icon: 📋
-    title: 面试专栏
-    details: 海量前端面试问题解答，一站式阅读体验。
-    link: /interview
-    linkText: 开始刷题
+    title: React全栈专栏
+    details: 总结相关React生态的知识
+    link: /React
+    linkText: 开始学习
   - icon: 💬
     title: 编程学习
-    details: 同步 B 站视频，文档用于巩固知识。
+    details: 文档用于巩固知识。
     link: /program/npm-package
     linkText: 编程学习
   - icon: 🔧

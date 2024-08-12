@@ -1,4 +1,4 @@
-import { exeryWeek, sidebarAlgorithm, sidebarInterview, sidebarPartterns, sidebarProgram } from './index';
+import sidebarAlgorithm from './algorithm';
 
 const sidebar = {
   '/': [
@@ -7,32 +7,61 @@ const sidebar = {
       collapsed: false,
       items: [
         { text: '什么是SunnyDocs?', link: '/guide' },
-        {
-          text: '24 年每周学习动态',
-          link: '/weekly/2024',
-        },
-
         { text: '资源导航', link: '/favorites' },
-        { text: '编程学习', link: '/program/' },
         {
           text: '年终总结',
           items: [{ text: '2024 年终总结', link: '/2024' }],
         },
-        { text: '参与贡献指南', link: '/contributing' },
       ],
     },
     {
-      text: '🍎 React 实战',
+      text: '🔥学习动态',
+      collapsed: false,
+      items: [
+        {
+          text: '2024.09',
+          link: '/weekly/202409',
+        },
+      ],
+    },
+    {
+      text: '🎒 JS',
+      collapsed: false,
+      items: [
+        {
+          text: '📔 前端设计模式',
+          collapsed: false,
+          items: [
+            { text: '导读', link: '/patterns/guide/' },
+            { text: '单例模式', link: '/patterns/singleton-pattern/' },
+            { text: '代理模式', link: '/patterns/proxy-pattern/' },
+            { text: '提供者模式', link: '/patterns/provider-pattern/' },
+            { text: '原型模式', link: '/patterns/prototype-pattern/' },
+            {
+              text: '容器/演示模式',
+              link: '/patterns/container-presentational-pattern/',
+            },
+            { text: '观察者模式', link: '/patterns/observer-pattern/' },
+            { text: '模块模式', link: '/patterns/module-pattern/' },
+            { text: '混合模式', link: '/patterns/mixin-pattern/' },
+            { text: '中介/中间件模式', link: '/patterns/middleware-pattern/' },
+            { text: '高阶组件模式', link: '/patterns/hoc-pattern/' },
+          ],
+        },
+      ],
+    },
+    {
+      text: '🍎 React',
       collapsed: false,
       items: [{ text: '添加 sitemap', link: '/nextjs/sitemap/' }],
     },
     {
-      text: '🍎 Next.js 实战',
+      text: '🍎 Next.js',
       collapsed: false,
       items: [{ text: '添加 sitemap', link: '/nextjs/sitemap/' }],
     },
     {
-      text: '🍎 Nest.js 实战',
+      text: '🍎 Nest.js',
       collapsed: false,
       items: [{ text: '添加 sitemap', link: '/nextjs/sitemap/' }],
     },
@@ -49,70 +78,22 @@ const sidebar = {
       ],
     },
     {
-      text: '小程序',
+      text: '📘 小程序',
       collapsed: false,
       items: [{ text: '添加 sitemap', link: '/nextjs/sitemap/' }],
     },
     {
-      text: '📝 备忘录',
-      collapsed: false,
-      items: [{ text: 'Git 命令', link: '/memo/git-command/' }],
-    },
-  ],
-  '/weekly/': exeryWeek(),
-  '/program/': sidebarProgram(),
-  '/patterns/': sidebarPartterns(),
-  '/algorithm/': sidebarAlgorithm(),
-  '/green/': [
-    {
-      text: '🎈 ACM 经历',
-      collapsed: false,
-      items: [
-        { text: '阅读须知', link: '/green/ch' },
-        {
-          text: '2019年 第二届信息科学与工程学院院赛-正式赛(赛后感想)',
-          link: '/green/ch1',
-        },
-        {
-          text: '2019年 第二届信息科学与工程学院院赛-正式赛(赛后补题)',
-          link: '/green/ch2',
-        },
-        {
-          text: '第四届全国中医药院校大学生程序设计竞赛（上篇）',
-          link: '/green/ch3',
-        },
-        {
-          text: '第四届全国中医药院校大学生程序设计竞赛（下篇）',
-          link: '/green/ch4',
-        },
-      ],
-    },
-    {
-      text: '💭 项目经历',
-      collapsed: false,
-      items: [
-        {
-          text: '🏆 从大一到大三，我与服务外包大赛',
-          link: '/green/hl-contest/',
-        },
-      ],
-    },
-  ],
-  '/tool/': [
-    {
-      text: '🎒 常用',
+      text: '🎒 常用工具',
       collapsed: false,
       items: [
         { text: 'emoji-list', link: '/tool/emoji-list' },
         { text: 'finalcut 剪辑快捷键', link: '/tool/finalcut/' },
-        { text: '什么时候下班？', link: '/tool/off-time/' },
         { text: '如何正常访问 GitHub？', link: '/tool/github520' },
-        { text: '版本管理，Git 基础', link: '/tool/git/' },
+        { text: '版本管理，Git 基础', link: '/tool/git' },
       ],
     },
   ],
-  // '/essay/': autoSidebar({ base: 'essay' }),
-  '/interview/': sidebarInterview(),
+  '/algorithm': sidebarAlgorithm(),
 };
 
 

@@ -1,10 +1,7 @@
 import { defineConfig } from 'vitepress';
-import { generateSitemap } from 'sitemap-ts';
-import { genFeed } from './plugins/genFeed.ts';
-import { docsVersion, github, name, site, description, logo, keywords } from './meta.ts';
+import { github, name, site, description, logo, keywords, docsVersion } from './meta.ts';
 import defaultConfig from './defaultConfig.ts';
 import sidebar from './sidebar/sidebar.ts';
-// import process from 'node:process';
 
 export default defineConfig({
   title: `${logo} ${name}`,
@@ -22,9 +19,6 @@ export default defineConfig({
     // 设置了 Open Graph 协议的其他属性,用于描述网页、设置网页 URL 和指定网页的语言环境
     ['meta', { property: 'og:description', content: description }],
     ['meta', { property: 'og:url', content: site }],
-    // data-website-id：存储网站的唯一标识符。
-    // src：指定了脚本的来源URL。
-    //  ['script', { 'async': '', 'defer': '', 'data-website-id': `${process.env.UMAMI_WEBSITE_ID || ''}`, 'src': `${process.env.UMAMI_ENDPOINT || ''}` }],
   ],
   themeConfig: {
     outline: 'deep',
@@ -45,24 +39,31 @@ export default defineConfig({
         items: [{ text: '🔥 24 年每周学习', link: '/weekly/2024' }],
       },
       {
-        text: '🔥 专栏',
+        text: '🔥React全栈专栏',
         items: [
-          { text: '🔥 全栈知识', link: '/fullStack/' },
-          { text: '📋 面试大全', link: '/interview/' },
+          { text: '🔥 React', link: '/React' },
+          { text: '📋 Nextjs', link: '/Nextjs' },
+          { text: '🔥 Nestjs', link: '/Nestjs' },
         ],
       },
-      {
-        text: '编程',
-        items: [
-          { text: '⭐ 资源导航', link: '/favorites' },
-          { text: '💻 编程学习', link: '/program/' },
-          { text: '🔧 编程工具', link: '/tool/' },
-        ],
-      },
+      // {
+      //   text: '🔥React专栏',
+      //   items: [
+      //     { text: '🔥 React', link: '/fullStack/' },
+      //     { text: '📋 Nextjs', link: '/interview/' },
+      //   ],
+      // },
+      // {
+      //   text: '编程',
+      //   items: [
+      //     { text: '⭐ 资源导航', link: '/favorites' },
+      //     { text: '💻 编程学习', link: '/program/' },
+      //     { text: '🔧 编程工具', link: '/tool/' },
+      //   ],
+      // },
       {
         text: `v ${docsVersion}`,
         items: [
-          { text: '🧱 参与贡献', link: '/contributing' },
           { text: '🎉 更新日志', link: `${github}/releases` },
         ],
       },
@@ -94,12 +95,5 @@ export default defineConfig({
     // darkModeSwitchLabel: '外观',
     // sidebarMenuLabel: '归档',
   },
-  // async buildEnd(siteConfig) {
-  // 站点地图是一个XML文件，列出了网站上的所有页面，帮助搜索引擎更好地抓取和索引网站内容。
-  //   await generateSitemap({ hostname: 'https://SunnyDocs.cn/' });
-  // 生成RSS订阅源文件。RSS订阅源允许用户订阅网站内容更新
-  //   await genFeed(siteConfig);
-  // },
-
   ...defaultConfig,
 });

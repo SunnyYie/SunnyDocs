@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "@docsearch/js": "3",
+    "dayjs": "^1.11.12",
     "feed": "^4.2.2",
+    "fs-extra": "^11.2.0",
+    "gray-matter": "^4.0.3",
+    "medium-zoom": "^1.1.0",
     "sitemap-ts": "^1.8.0"
   }
 }
