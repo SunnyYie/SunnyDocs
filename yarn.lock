@@ -2401,10 +2401,10 @@
     fast-glob "^3.3.2"
     magic-string "^0.30.5"
 
-"@vite-pwa/vitepress@^0.2.3":
-  version "0.2.3"
-  resolved "https://registry.npmmirror.com/@vite-pwa/vitepress/-/vitepress-0.2.3.tgz#500c0ea5e9c214b7fb8ee7324163b3c707b1dd6f"
-  integrity sha512-6k9151CmILbSJQ88hLEMLL+MOQZDURKg2c4Wo5UcaEaOWU0jv7S+mo8nqyg86sM6ry8Jlnp6Zfv6AE0FqnfEyQ==
+"@vite-pwa/vitepress@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@vite-pwa/vitepress/-/vitepress-0.5.0.tgz#69e5bb3131e0ddbba5144410d0cdbea0de7b0759"
+  integrity sha512-a+BnACLMYOf/u2o6RhOJIdJgOW9wym9mTJGWbOLzFHE+fPjg+z1t/Xqm9LvOBQYEDIkrGrf+KxN4COQ0B8hbHg==
 
 "@vitejs/plugin-vue@^5.0.5":
   version "5.1.2"
