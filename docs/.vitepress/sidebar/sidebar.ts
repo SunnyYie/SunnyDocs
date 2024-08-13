@@ -29,10 +29,9 @@ const sidebar = {
       collapsed: false,
       items: [
         {
-          text: '📔 前端设计模式',
-          collapsed: false,
+          text: '前端设计模式',
+          collapsed: true,
           items: [
-            { text: '导读', link: '/patterns/guide/' },
             { text: '单例模式', link: '/patterns/singleton-pattern/' },
             { text: '代理模式', link: '/patterns/proxy-pattern/' },
             { text: '提供者模式', link: '/patterns/provider-pattern/' },

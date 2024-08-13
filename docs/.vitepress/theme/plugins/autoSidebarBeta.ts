@@ -1,26 +1,31 @@
-import { join, resolve } from 'node:path';
-import matter from 'gray-matter';
-import fg from 'fast-glob';
-import fs from 'fs-extra';
+import { join, resolve } from 'node:path'
+import matter from 'gray-matter'
+import fg from 'fast-glob'
+import fs from 'fs-extra'
 
 export interface Options {
-  base: string;
-  title?: string;
-  collapsed?: boolean;
+  base: string
+  title?: string
+  collapsed?: boolean
 }
 
-export const DIR_ROOT = resolve(__dirname, '../../../../');
-export const DIR_SRC = resolve(DIR_ROOT, 'docs');
+export const DIR_ROOT = resolve(__dirname, '../../../../')
+export const DIR_SRC = resolve(DIR_ROOT, 'docs')
 
 export function fastGlobSync(type: string, dir: string, ignore: string[] = []) {
   const files = fg.sync('*', {
     onlyDirectories: type === 'dir',
     onlyFiles: type === 'file',
     cwd: dir,
-    ignore: ['_*', 'dist', 'node_modules', ...ignore],
-  });
-  files.sort();
-  return files;
+    ignore: [
+      '_*',
+      'dist',
+      'node_modules',
+      ...ignore,
+    ],
+  })
+  files.sort()
+  return files
 }
 
 export const dirs = fastGlobSync('dir', DIR_SRC)
@@ -28,14 +33,14 @@ export const dirs = fastGlobSync('dir', DIR_SRC)
 function getSidebar(dir: string, title: string | undefined) {
   const curDir = resolve(DIR_SRC, dir)
   const dirs = fastGlobSync('dir', curDir)
-  const res = [] as any
+  const res = []
   if (dirs.length) {
     // TODO 多级目录
     dirs.forEach((e) => {
       const childDir = resolve(curDir, e)
       const mdFiles = fastGlobSync('file', childDir)
       const sidebar = {
-        text: ((e.charAt(0).toUpperCase() + e.slice(1)) as any).replaceAll('-', ' '),
+        text: (e.charAt(0).toUpperCase() + e.slice(1)).replaceAll('-', ' '),
         collapsed: false,
         items: [] as any,
       }
